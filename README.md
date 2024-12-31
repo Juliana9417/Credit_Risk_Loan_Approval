@@ -88,93 +88,46 @@ Data distribution is imbalanced, with most features highly skewed and concentrat
 <img src="https://github.com/user-attachments/assets/d528b2c7-b2ed-4699-9968-56384d4ba2ae"
  alt="JumlahData">
 
-## 📂 **Stage 4 : Data Modeling**
+## 📂 **Stage 5 : Data Modeling**
 
 <p align="center">
 <img src="https://github.com/user-attachments/assets/26c4db70-addd-41d5-9fe5-2fbc55f347f4"
  alt="DataModeling">
-
-## 📂 **Stage 3 : Modelling**
-
-**Recall (cross validation)** digunakan sebagai matrix evaluasi dengan fokus terhadap nilai **False Negative** dalam membandingkan performa antar algoritma model klasifikasi mechine learning (Supervised Learning). <br>
-
-Menurut Powers, **recall (sensitivitas atau true positive rate)** merupakan metrik evaluasi yang penting, terutama dalam kasus di mana deteksi positif benar (**true positives**) lebih kritis dibandingkan dengan deteksi negatif salah (false negatives). Powers juga menjelaskan bahwa kesalahan tipe II (**false negatives**) memiliki konsekuensi yang lebih serius dibandingkan dengan kesalahan tipe I (false positives). <br>
-
-**Cross-validation** digunakan sebagai teknik evaluasi recall dari model machine learning untuk memastikan model tidak hanya dioptimalkan untuk dataset tertentu, tetapi memiliki generalisasi yang baik pada dataset lainnya (Caruana & Niculescu-Mizil, 2006). <br>
-
-Kasus dalam dataset ini dimana perusahaan ingin meningkatkan revenue. Maka dari itu, recall (cross validation) menjadi fokus utama untuk menghindari model gagal mengidentifikasi pelanggan yang benar-benar menghasilkan revenue. Dengan nilai false negatives rendah, diharapkan lebih banyak peluang revenue yang tidak terlewatkan oleh perusahaan. Model dengan nilai recall (cross validation) mendekati 1 menunjukkan performa yang lebih baik dalam mendeteksi semua kejadian positif. <br>
-
-### **Logistic Regression : Modeling and Evaluation**
-
-Setelah uji coba beberapa algoritma model klasifikasi yaitu Logistic Regression, Decission Tree, Random Forest, AdaBoost, dan XGBoost. Model algoritma **Logistic Regression** dengan Hyperparameter Tuning dipilih karena menunjukkan performa terbaik. Dengan mempertimbangkan recall yang tinggi dan hasil cross-validation yang baik, Logistic Regression memberikan keseimbangan optimal antara deteksi kasus positif dan penghindaran dari false negatives, sehingga mendukung tujuan akhir peningkatan revenue secara efektif.<br>
-
-Berikut hasil evaluasi dari prediksi model Logistic Regression setelah dilakukan Hyperparameter Tuning.
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/637a0ed5-5f1a-40bf-bf42-37825c5120b7">
-   </p>
-<p align="center">
-  Gambar 18 – Hasil Evaluasi Matriks Logistic Regression dengan Hyperparameter Tuning  <br>
-
-Nilai Recall (cross-validation) dari model Logistic Regression dengan Hyperparameter Tuning pada train sekitar 0.83 dan test 0.81 yang berarti model memiliki performa yang sudah cukup baik.
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/58c460d5-4508-4ca4-b57d-2fdf50db6a74">
-   </p>  
-<p align="center">
-  Gambar 19 – Confussion Matrix Logistic Regression dengan Hyperparameter Tuning <br>
-<br>
 </p>
-best_model (Logistic Regression dengan Hyperparameter Tuning terbaik) lebih moderat dan lebih seimbang dalam hal recall dengan ukuran/metrik evaluasi lainnya. Dalam konteks bisnis, model ini merupakan pilihan yang lebih baik karena tetap menjaga keseimbangan antara revenue (tujuan utama) dan cost (bukan tujuan utama namun perlu dipertimbangkan juga).
-
-### **Logistic Regression : Feature Importances**
-Langkah berikutnya dilakukan pengukuran pengaruh fitur terhadap model berdasarkan nilai absolut dari koefisien fitur dalam model. Dengan kata lain, fitur dengan koefisien yang lebih besar (baik positif maupun negatif) dianggap lebih penting, karena perubahan dalam fitur tersebut akan berdampak lebih signifikan terhadap output model. <br>
-
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/acf3cae7-a1a1-4bc3-896b-03279affef92">
-   </p>  
-<p align="center">
-  Gambar 20 – Feature Importances by the absolute value of their coefficients <br>
-<br>
-
-Fitur PageValues memiliki koefisien positif (0.02854369)menunjukkan bahwa PageValues berdampak positif terhadap target variabel, tetapi pengaruhnya tidak besar.<br>
-Fitur lainnya (Month_encoded, VisitorType_isNew_Visitor, SpecialDay, dan Page_Count) memiliki koefisien 0, menunjukkan bahwa fitur fitur tsb tidak berpengaruh signifikan dalam model ini.
-<br>
-
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/1beee733-23fb-40db-becd-e8c386b46a0c">
-   </p>  
-<p align="center">
-  Gambar 21 – Feature Importances by the SHAP value (impact on model output) <br>
-<br>
-  
-PageValues memiliki nilai SHAP yang tinggi, berarti fitur ini memiliki pengaruh besar pada prediksi model. Nilai SHAP untuk PageValues cenderung positif yang artinya peningkatan PageValues berdampak pada peningkatan variabel target.
-<br>
-Fitur lainnya (Month_encoded, VisitorType_isNew_Visitor, SpecialDay, dan Page_Count) memiliki nilai SHAP rendah yang menunjukkan bahwa fitur-fitur tersebut tidak berpengaruh signifikan dalam model ini.
-
-**Business Insight :** <br>
-1. Pentingnya Pengalaman Pengguna: <br>
-'Page values' yang tinggi menunjukkan bahwa pengunjung yang terlibat secara aktif dengan halaman-halaman situs cenderung lebih mungkin untuk membeli. Ini menekankan pentingnya pengalaman pengguna yang baik dan menarik untuk meningkatkan kemungkinan konversi.<br>
-2. Relevansi Konten: <br>
-Halaman-halaman dengan 'page values' tinggi mungkin memiliki konten yang lebih relevan dan informatif bagi pengunjung. Konten ini dapat mencakup deskripsi produk yang jelas, testimoni pelanggan, ulasan produk, dan informasi lain yang membantu pengunjung membuat keputusan pembelian. <br>
-3. Perilaku Pembelian: <br>
-Insight ini menunjukkan bahwa pengunjung yang lebih terlibat dengan konten situs web cenderung lebih cenderung untuk membeli. Ini bisa mencerminkan tahap perjalanan pembelian pengunjung dan faktor-faktor psikologis yang mempengaruhi keputusan pembelian. <br>
-
-**Rekomendasi Bisnis :**
-<br>
-1. Optimalkan Halaman Produk: <br>
-Pastikan deskripsi produk, gambar, dan ulasan pelanggan disajikan dengan baik dan mudah diakses. Gunakan tata letak yang menarik dan intuitif untuk meningkatkan 'page values'. <br>
-2. Personalisasi Konten:<br>
-Gunakan data pengunjung untuk menyesuaikan rekomendasi produk dan konten yang ditampilkan di halaman. Personalisasi dapat membantu meningkatkan relevansi konten dan minat pengunjung. <br>
-3. Uji A/B dan Analisis:<br>
-Lakukan uji A/B untuk halaman-halaman kunci dan analisis lanjutan terhadap data 'page values' untuk memahami faktor apa yang paling mempengaruhi konversi. Ini dapat membantu mengidentifikasi perbaikan yang dapat dilakukan dengan cepat. <br>
-4. Peningkatan Pengalaman Pengguna: <br>
-Fokus pada pengalaman pengguna yang responsif dan intuitif. Pastikan situs web mudah dinavigasi, cepat dimuat, dan menawarkan pengalaman yang menyenangkan bagi pengunjung. <br>
-5. Monitoring dan Optimasi Terus-menerus: <br>
-Terus pantau metrik 'page values' dan konversi untuk melihat bagaimana perubahan yang diterapkan memengaruhi perilaku pengunjung. Optimalkan strategi berdasarkan temuan dari analisis ini secara berkala.
 
 <br>
+ <p align="center">
+<img src="https://github.com/user-attachments/assets/6f647df2-fd8e-44d4-800b-aa9b417d7bfe"
+ alt="DataModeling">
+ </p>
+ 
+The Logistic Regression model shows a robust performance with an ROC AUC of 0.858 on both the cross-validation training and test sets. This suggests that the model performs consistently well in distinguishing between classes across different thresholds of probability, despite some imbalance in the data. The ROC AUC score indicates a good trade-off between True Positive Rate (TPR) and False Positive Rate (FPR).
 
----
+## 📂 **Stage 6 : Model Evaluation**
 
-#### Sumber
-Caruana, R. & Niculescu-Mizil, A., 2006. An empirical comparison of supervised learning algorithms. Proceedings of the 23rd International Conference on Machine Learning, pp.161-168. doi: 10.1145/1143844.1143865. <br>
-Powers, D. M., 2011. Evaluation: From Precision, Recall and F-Measure to ROC, Informedness, Markedness & Correlation. [online] Available at: https://doi.org/10.48550/arXiv.2010.16061 [Accessed 16 July 2024].
+<br>
+ <p align="center">
+<img src="https://github.com/user-attachments/assets/a6002c17-e51f-436f-89a8-85781c252391"
+ alt="ModelEvaluation">
+ </p>
+
+Gini = (roc_auc * 2) - 1
+Gini : 0.701925
+
+Reliable Predictive Performance
+With an ROC-AUC of 0.850963, the model demonstrates exceptional performance in distinguishing between Bad Loan and Good Loan. It proves to be highly reliable in predicting default risk.
+
+Strong Gini Coefficient
+A Gini value of 0.701925 indicates the model's effectiveness in separating positive and negative classes. This serves as a strong indicator of the model's predictive power, even in the presence of imbalanced data.
+
+## 📂 **Stage 7 : Recommendation and Conclution**
+
+A. Based on the best Logistic Regression model, here are the recommendations for managing loan credit:
+1. Total Payment (total_pymnt): Focus on high-paying customers. Offer incentives like discounts or special promos for those paying over 22,000.
+2. Total Interest Received (total_rec_int): Tailor approaches for customers with high interest income. Offer premium product access to those with more than 9,000.
+3. Outstanding Loan Balance (out_prncp): Review policies for customers with small balances. For balances under 3,000, offer more flexible repayment options.
+4. Interest Rate (int_rate): Provide attractive offers for customers with low-interest rates, such as further financing or refinancing options.
+
+B. Model Analysis: 
+- The Logistic Regression model shows a portfolio consisting of 61.13% good loans and 38.87% risky loans. 15.01% of good loans are invested. For every 100 loans avoided, 97.95% are risky (98 risky and 2 good loans).
+
