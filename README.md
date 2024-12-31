@@ -38,7 +38,7 @@ Duplicates Data : 0
 ## 📂 **Stage 2 : Feature Engineering**
 <p align="center">
 <img src="https://github.com/user-attachments/assets/886250d9-6221-458f-90e0-e0fa18128d66"
- alt="Proportion loan">
+ alt="Proportionloan">
 </p>
 
 ### Data Preprocessing Summary:
