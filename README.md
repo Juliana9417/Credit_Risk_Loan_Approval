@@ -25,7 +25,7 @@ Predicting Credit Risk Using Machine Learning for Loan Decision-Making
 <br>
 
 ---
-<br>]
+<br>
 
 ## 📂 **Stage 1 : Data Understanding**
 ### Dataset
