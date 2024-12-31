@@ -29,11 +29,11 @@ Predicting Credit Risk Using Machine Learning for Loan Decision-Making
 
 ## 📂 **Stage 1 : Data Understanding**
 ### Dataset
--Dataset Loan 2007-2014
--Rows : 466285
--Columns : 75
--Columns-Null : 40 Columns
--Duplicates Data : 0
+- Dataset Loan 2007-2014
+- Rows : 466285
+- Columns : 75
+- Columns-Null : 40 Columns
+- Duplicates Data : 0
 </p>
 <br>
 
@@ -112,8 +112,8 @@ The Logistic Regression model shows a robust performance with an ROC AUC of 0.85
  alt="ModelEvaluation">
  </p>
 
--Gini = (roc_auc * 2) - 1
--Gini : 0.701925
+- Gini = (roc_auc * 2) - 1
+- Gini : 0.701925
 
 Reliable Predictive Performance
 With an ROC-AUC of 0.850963, the model demonstrates exceptional performance in distinguishing between Bad Loan and Good Loan. It proves to be highly reliable in predicting default risk.
