@@ -37,7 +37,8 @@ Duplicates Data : 0
 
 ## 📂 **Stage 2 : Feature Engineering**
 <p align="center">
-  <img src=![proporsi loan](https://github.com/user-attachments/assets/a4a956c7-795b-44bd-97c6-eddfacff24f5)
+   <img src="![proporsi loan](https://github.com/user-attachments/assets/85f36ae2-6bda-4b3e-906e-b4ba97a77467)
+" alt="ProportionLoan">
 </p>
 
 ### Data Preprocessing Summary:
