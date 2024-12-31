@@ -37,7 +37,7 @@ Duplicates Data : 0
 
 ## 📂 **Stage 2 : Feature Engineering**
 <p align="center">
-   ![alt text](https://github.com/Juliana9417/Credit_Risk_Loan_Approval/blob/3e4b9c0193568b0f801091ce95a0d21fb75bd479/Photo/proporsi%20loan.png?raw=true)
+![alt text](https://github.com/Juliana9417/Credit_Risk_Loan_Approval/blob/3e4b9c0193568b0f801091ce95a0d21fb75bd479/Photo/proporsi%20loan.png?raw=true)
 </p>
 
 ### Data Preprocessing Summary:
