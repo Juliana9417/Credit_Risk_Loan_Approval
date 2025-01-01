@@ -121,7 +121,7 @@ With an ROC-AUC of 0.850963, the model demonstrates exceptional performance in d
 Strong Gini Coefficient
 A Gini value of 0.701925 indicates the model's effectiveness in separating positive and negative classes. This serves as a strong indicator of the model's predictive power, even in the presence of imbalanced data.
 
-## 📂 **Stage 7 : Recommendation and Conclution**
+## 📂 **Stage 7 : Recommendation and Conclusion**
 
 A. Based on the best Logistic Regression model, here are the recommendations for managing loan credit:
 1. Total Payment (total_pymnt): Focus on high-paying customers. Offer incentives like discounts or special promos for those paying over 22,000.
